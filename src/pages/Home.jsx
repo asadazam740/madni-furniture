@@ -23,7 +23,7 @@ export default function Home() {
       {/* Featured Products */}
       <section className="section featured-section">
         <div className="container">
-          <h2>Featured Collection</h2>
+          <h2>Featured</h2>
           <p className="section-subtitle">Handpicked selections for your home</p>
           <div className="products-grid">
             {featured.map(product => (

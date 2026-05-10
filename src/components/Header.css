@@ -1,0 +1,146 @@
+.header {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--color-light);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.logo {
+  text-decoration: none;
+  color: var(--color-primary);
+  transition: var(--transition);
+
+  h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  &:hover h1 {
+    color: var(--color-secondary);
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+  flex: 1;
+  margin: 0 var(--spacing-2xl);
+
+  .nav-link {
+    text-decoration: none;
+    color: var(--color-dark);
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+
+    &.admin-link {
+      background-color: #fff3e6;
+      color: var(--color-warning);
+      padding: 0.5rem 1rem;
+      border-radius: var(--border-radius-md);
+
+      &:hover {
+        background-color: var(--color-warning);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  .user-menu {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-left: auto;
+
+    .user-name {
+      color: var(--color-dark);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .btn {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    gap: var(--spacing-lg);
+    margin: 0 var(--spacing-lg);
+  }
+
+  .nav-link {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-content {
+    height: 60px;
+  }
+
+  .logo h1 {
+    font-size: 1.25rem;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin: 0 var(--spacing-md);
+
+    .nav-link {
+      font-size: 0.9rem;
+    }
+
+    .user-menu {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+      margin-left: 0;
+
+      .user-name {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .header-content {
+    height: auto;
+    padding: var(--spacing-md);
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+    width: 100%;
+    margin: 0;
+    padding: var(--spacing-md) 0;
+
+    .nav-link {
+      width: 100%;
+      padding: var(--spacing-md);
+      text-align: center;
+    }
+  }
+}
